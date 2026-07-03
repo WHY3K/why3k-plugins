@@ -169,11 +169,12 @@ img { max-width: 100%; display: block; }
   margin-right: 39px; /* 左のドット幅ぶんを相殺して中央寄せ */
 }
 .device .readout {
-  font-family: var(--mono);
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;   /* 桁を揃えつつ、スラッシュ無しの普通のゼロに */
   font-weight: 700;
   color: #33d15e;
   font-size: clamp(32px, 6.4vw, 52px);
-  letter-spacing: .02em;
+  letter-spacing: .04em;
   text-align: center;
   padding: 36px 20px;
   text-shadow: 0 0 18px rgba(51,209,94,.45);
@@ -237,8 +238,9 @@ section { padding: 72px 0; }
   padding: 34px 22px;
 }
 .plugin-card .thumb .readout {
-  font-family: var(--mono); font-weight: 700; color: #33d15e;
-  font-size: 30px; text-align: center; letter-spacing: .02em;
+  font-family: var(--sans); font-variant-numeric: tabular-nums;
+  font-weight: 700; color: #33d15e;
+  font-size: 30px; text-align: center; letter-spacing: .04em;
   text-shadow: 0 0 14px rgba(51,209,94,.40);
 }
 .plugin-card .thumb .readout .ms { color: #1f8f42; }
