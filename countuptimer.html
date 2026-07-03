@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CountUpTimer — WHY3K PLUGINS</title>
+<meta name="description" content="クリップ再生からの経過時間を 0:00:00.000 でカウントアップ表示する Max for Live デバイス。配信・ライブ・録音の時間表示に。無料。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">WHY3K <span>PLUGINS</span></a>
+    <nav class="nav">
+      <a href="index.html#plugins">プラグイン</a>
+      <a href="index.html#about">このサイトについて</a>
+      <a href="countuptimer.html">CountUpTimer</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap crumb">
+  <a href="index.html">Home</a> / CountUpTimer
+</div>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero" style="padding-top:36px;">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Max for Live · Utility · Free</span>
+      <h1>CountUpTimer</h1>
+      <p class="lead">
+        セッションビューのクリップを再生した瞬間を 0:00:00.000 として、
+        経過時間を自動でカウントアップ表示。
+        配信・ライブ・録音の「いま何分経った？」を、ひと目で。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="assets/downloads/CountUpTimer_v1.1.zip" download>
+          ダウンロード <small>zip · v1.1</small>
+        </a>
+        <a class="btn btn-ghost" href="#howto">使い方を見る</a>
+      </div>
+      <p class="hero-meta">無料 · Ableton Live 12 Suite（Max for Live）対応</p>
+    </div>
+
+    <div class="device" aria-hidden="true">
+      <div class="label">CountUpTimer</div>
+      <div class="readout">0:03:07<span class="ms">.512</span></div>
+      <div class="status"><span class="dot"></span>SESSION · PLAYING</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 特徴 ===== -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="features">
+      <div class="card">
+        <div class="ico">⏱</div>
+        <h3>ミリ秒まで表示</h3>
+        <p>0:00:00.000 形式で経過時間を表示。テイクの長さやセクションの尺の確認に。</p>
+      </div>
+      <div class="card">
+        <div class="ico">▣</div>
+        <h3>常に最前面の別窓</h3>
+        <p>独立ウィンドウとしても表示可能。配信ソフトのキャプチャやサブモニター表示に便利。</p>
+      </div>
+      <div class="card">
+        <div class="ico">↻</div>
+        <h3>クリップごとに 0 から</h3>
+        <p>別のクリップに切り替えると自動でリセット。新しいテイクの計測がすぐ始められます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 本文 ===== -->
+<section>
+  <div class="wrap doc">
+
+    <h2 id="howto">使い方</h2>
+    <h3>1. トラックに置く</h3>
+    <p>
+      <code>CountUpTimer.amxd</code> を、計測したいクリップがある
+      <strong>オーディオトラック</strong>にドラッグ＆ドロップします。
+    </p>
+    <div class="note">
+      <strong>マスター／リターントラックでは動きません</strong>
+      必ず通常のオーディオトラックに置いてください。
+    </div>
+
+    <h3>2. セッションビューでクリップを再生する</h3>
+    <p>
+      再生した瞬間を 0:00:00.000 として、経過時間が自動でカウントアップします。
+      別のクリップに切り替えると、また 0 から数え直します。
+    </p>
+    <div class="note">
+      <strong>セッションビュー専用です</strong>
+      クリップを並べる「セッションビュー」で再生してください。
+      横長のタイムラインの「アレンジメントビュー」では動作しません。
+    </div>
+
+    <h3>3. 止めたときの動き</h3>
+    <p>
+      クリップを止めると、その時点の経過時間で表示が止まります（数字はグレーに）。
+      0 には戻らず、次に別のクリップを再生すると 0 から数え直します。
+    </p>
+
+    <h3>別ウィンドウで出す</h3>
+    <p>
+      タイマーは常に最前面に出る独立ウィンドウとしても表示できます。
+      セットを開くと自動で開き、<strong>Close</strong> で閉じ、<strong>Open</strong> で開き直せます。
+      ウィンドウはドラッグで好きな位置に動かせます。
+    </p>
+
+    <h2>動作環境</h2>
+    <table class="spec">
+      <tr><th>必要ソフト</th><td>Ableton Live 12 Suite（Max for Live 同梱）</td></tr>
+      <tr><th>対応OS</th><td>macOS 向けに最適化。Windows でも動作しますが、フォントの見え方が多少変わることがあります。</td></tr>
+      <tr><th>ビュー</th><td>セッションビュー専用（アレンジメントビューは非対応）</td></tr>
+      <tr><th>設置トラック</th><td>通常のオーディオトラック（マスター／リターン不可）</td></tr>
+      <tr><th>バージョン</th><td>v1.1</td></tr>
+      <tr><th>料金</th><td>無料</td></tr>
+    </table>
+
+    <div class="note">
+      <strong>テンポについて</strong>
+      経過時間は曲のテンポを基準に計算しています。テンポが一定の曲では表示は実時間と一致します。
+      曲の途中でテンポを変えると表示がわずかにずれることがあるため、正確に測りたいときは固定テンポでお使いください。
+    </div>
+
+    <!-- ダウンロード帯 -->
+    <div class="download-band">
+      <div>
+        <h3>CountUpTimer をダウンロード</h3>
+        <p>zip（.amxd + 説明書を同梱）· v1.1 · 無料</p>
+      </div>
+      <a class="btn btn-primary" href="assets/downloads/CountUpTimer_v1.1.zip" download>
+        ダウンロード <small>zip</small>
+      </a>
+    </div>
+
+    <p style="font-size:13.5px; color:var(--ink-soft);">
+      ※ 再配布・販売はご遠慮ください。制作：WHY3K
+    </p>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="yr"></span> WHY3K</span>
+    <span><a href="index.html">Home</a> · <a href="countuptimer.html">CountUpTimer</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
