@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CountUpTimer — WHY3K PLUGINS</title>
 <meta name="description" content="クリップ再生からの経過時間を 00:00:00.000 でカウントアップ表示する Max for Live デバイス。配信・ライブ・録音の時間表示に。無料。">
+<link rel="canonical" href="https://why3k.github.io/why3k-plugins/countuptimer.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WHY3K PLUGINS">
+<meta property="og:title" content="CountUpTimer — WHY3K PLUGINS">
+<meta property="og:description" content="クリップ再生からの経過時間を 00:00:00.000 でカウントアップ表示する Max for Live デバイス。無料。">
+<meta property="og:url" content="https://why3k.github.io/why3k-plugins/countuptimer.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -27,7 +35,7 @@
 <!-- ===== ヒーロー ===== -->
 <section class="hero" style="padding-top:36px;">
   <div class="wrap hero-grid">
-    <div>
+    <div class="stagger">
       <span class="eyebrow">Max for Live · セッションビュー専用 · Free</span>
       <h1>CountUpTimer</h1>
       <p class="lead">
@@ -44,18 +52,18 @@
       <p class="hero-meta">無料 · Ableton Live 12 Suite（Max for Live）対応</p>
     </div>
 
-    <div class="device" aria-hidden="true">
+    <div class="device reveal" data-reveal="right" aria-hidden="true">
       <div class="titlebar">
         <span class="dots"><i></i><i></i><i></i></span>
         <span class="win-title">disp</span>
       </div>
-      <div class="readout">00:03:07<span class="ms">.512</span></div>
+      <div class="readout" data-countup>00:00:00<span class="ms">.000</span></div>
     </div>
   </div>
 </section>
 
 <!-- ===== セッションビュー専用の強調警告 ===== -->
-<div class="wrap alert-band">
+<div class="wrap alert-band reveal">
   <div class="alert">
     <span class="mark">⚠️</span>
     <div class="body">
@@ -72,7 +80,7 @@
 <!-- ===== 特徴 ===== -->
 <section class="section-soft">
   <div class="wrap">
-    <div class="features">
+    <div class="features stagger">
       <div class="card">
         <div class="ico">⏱</div>
         <h3>ミリ秒まで表示</h3>
@@ -173,5 +181,6 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="assets/scroll.js" defer></script>
 </body>
 </html>
