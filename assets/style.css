@@ -74,6 +74,13 @@ img { max-width: 100%; display: block; }
   transition: color .15s;
 }
 .nav a:hover { color: var(--ink); }
+.nav .lang-switch {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
 
 /* ---------- ボタン ---------- */
 .btn {
