@@ -19,9 +19,18 @@
           "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html { scroll-behavior: smooth; }
+
+/* タップ/クリック時の青い矩形ハイライトを廃止し、
+   キーボード操作時のみ上品なフォーカスリングを出す */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid rgba(17,17,20,.4);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
 
 body {
   margin: 0;
@@ -70,17 +79,21 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
   color: var(--ink-soft);
   font-size: 14px;
-  margin-left: 22px;
-  transition: color .15s;
+  margin-left: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: color .15s, background .15s;
 }
-.nav a:hover { color: var(--ink); }
+.nav a:hover { color: var(--ink); background: var(--bg-soft); }
+.nav a:active { color: var(--ink); background: #eaeaef; }
 .nav .lang-switch {
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 3px 10px;
+  padding: 4px 12px;
   font-size: 12px;
   letter-spacing: .08em;
 }
+.nav .lang-switch:hover { border-color: #d5d5db; }
 
 /* ---------- ボタン ---------- */
 .btn {
@@ -101,6 +114,7 @@ img { max-width: 100%; display: block; }
   color: var(--accent-ink);
 }
 .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,0,0,.16); }
+.btn:active { transform: translateY(0) scale(.985); }
 .btn-ghost {
   background: transparent;
   color: var(--ink);
