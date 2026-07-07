@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CountUpTimer — WHY3K PLUGINS</title>
-<meta name="description" content="A free Max for Live device that displays elapsed time from clip launch in 00:00:00.000 format. For streaming, live sets, and recording.">
+<title>CountUpTimer — Free Max for Live Timer | WHY3K PLUGINS</title>
+<meta name="description" content="CountUpTimer is a free Max for Live device that shows elapsed time from the moment you launch a clip — a live 00:00:00.000 readout for streaming, live sets, and recording.">
 <link rel="canonical" href="https://why3k.github.io/why3k-plugins/countuptimer.en.html">
 <link rel="alternate" hreflang="ja" href="https://why3k.github.io/why3k-plugins/countuptimer.html">
 <link rel="alternate" hreflang="en" href="https://why3k.github.io/why3k-plugins/countuptimer.en.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WHY3K PLUGINS">
-<meta property="og:title" content="CountUpTimer — WHY3K PLUGINS">
-<meta property="og:description" content="A free Max for Live device that displays elapsed time from clip launch in 00:00:00.000 format.">
+<meta property="og:title" content="CountUpTimer — Free Max for Live Timer">
+<meta property="og:description" content="A free Max for Live device that shows elapsed time from the moment you launch a clip. Session View only.">
 <meta property="og:url" content="https://why3k.github.io/why3k-plugins/countuptimer.en.html">
 <meta property="og:image" content="https://why3k.github.io/why3k-plugins/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -43,18 +43,17 @@
       <span class="eyebrow">Max for Live · Session View only · Free</span>
       <h1>CountUpTimer</h1>
       <p class="lead">
-        The moment you launch a Session View clip becomes 00:00:00.000,
-        and the elapsed time counts up automatically.
-        "How long has it been?" — answered at a glance,
-        for streaming, live sets, and recording.
+        CountUpTimer is a free Max for Live device that starts counting
+        the moment you launch a clip — a live 00:00:00.000 readout of
+        exactly how long you've been playing, recording, or streaming.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://github.com/WHY3K/why3k-plugins/releases/download/v1.1/CountUpTimer_v1.1.zip">
-          Download <small>zip · v1.1</small>
+          Download free <small>zip · v1.1</small>
         </a>
-        <a class="btn btn-ghost" href="#howto">How to use</a>
+        <a class="btn btn-ghost" href="#howto">Getting started</a>
       </div>
-      <p class="hero-meta">Free · Requires Ableton Live 12 Suite (Max for Live)</p>
+      <p class="hero-meta">Free · Requires Ableton Live 12 Suite (Max for Live included)</p>
     </div>
 
     <div class="device reveal" data-reveal="right" aria-hidden="true">
@@ -72,11 +71,10 @@
   <div class="alert">
     <span class="mark">⚠️</span>
     <div class="body">
-      <strong>This device works in Session View only</strong>
+      <strong>Session View only</strong>
       <p>
-        It only responds to clips launched in <strong>Session View</strong>.
-        It does not work in Arrangement View (the horizontal timeline).
-        Always launch clips from Session View when using this device.
+        CountUpTimer only responds to clips launched in <strong>Session View</strong>.
+        It won't do anything in Arrangement View.
       </p>
     </div>
   </div>
@@ -89,17 +87,17 @@
       <div class="card">
         <div class="ico">⏱</div>
         <h3>Millisecond precision</h3>
-        <p>Shows elapsed time as 00:00:00.000. Great for checking take lengths and section timing.</p>
+        <p>A clean 00:00:00.000 readout — check take lengths and section timing at a glance.</p>
       </div>
       <div class="card">
         <div class="ico">▣</div>
-        <h3>Always-on-top window</h3>
-        <p>Can also appear as a separate floating window — handy for stream capture or a second monitor.</p>
+        <h3>Floating window</h3>
+        <p>Pop the timer out as an always-on-top window. Perfect for stream capture or a second monitor.</p>
       </div>
       <div class="card">
         <div class="ico">↻</div>
-        <h3>Resets per clip</h3>
-        <p>Switching to another clip automatically resets to zero, so timing a new take starts instantly.</p>
+        <h3>Resets with every clip</h3>
+        <p>Launch a different clip and the count restarts from zero — no buttons to press between takes.</p>
       </div>
     </div>
   </div>
@@ -109,45 +107,40 @@
 <section>
   <div class="wrap doc">
 
-    <h2 id="howto">How to use</h2>
+    <h2 id="howto">Getting started</h2>
     <h3>1. Drop it on a track</h3>
     <p>
-      Drag &amp; drop <code>CountUpTimer.amxd</code> onto the
-      <strong>audio track</strong> that holds the clips you want to time.
+      Drag <code>CountUpTimer.amxd</code> onto any regular <strong>audio track</strong> —
+      the one holding the clips you want to time.
     </p>
     <div class="note">
-      <strong>Doesn't work on Master or Return tracks</strong>
-      Always place it on a regular audio track.
+      <strong>Note</strong>
+      Master and Return tracks are not supported. Use a regular audio track.
     </div>
 
-    <h3>2. Launch a clip in Session View</h3>
+    <h3>2. Launch a clip</h3>
     <p>
-      The moment of launch becomes 00:00:00.000 and the timer counts up automatically.
-      Switching to another clip restarts the count from zero.
+      Launch a clip in Session View and the timer starts from 00:00:00.000.
+      Launch a different clip and it restarts from zero.
     </p>
-    <div class="note">
-      <strong>Session View only</strong>
-      Launch clips from Session View (the clip grid).
-      The device does not respond in Arrangement View (the horizontal timeline).
-    </div>
 
-    <h3>3. What happens when you stop</h3>
+    <h3>3. Stop the clip</h3>
     <p>
-      When you stop the clip, the display freezes at the elapsed time (the digits turn gray).
-      It doesn't reset to zero — the next clip you launch starts a fresh count.
+      When you stop a clip, the readout freezes at the elapsed time and the digits turn gray.
+      It holds that value until the next clip launch starts a fresh count.
     </p>
 
     <h3>The floating window</h3>
     <p>
-      The timer can also appear as an always-on-top floating window.
-      It opens automatically with your set; close it with <strong>Close</strong> and
-      reopen it with <strong>Open</strong>. Drag it anywhere you like.
+      The timer also lives in an always-on-top floating window that opens automatically
+      with your set. Hit <strong>Close</strong> to dismiss it, <strong>Open</strong> to bring
+      it back, and drag it anywhere on screen.
     </p>
 
     <h2>Requirements</h2>
     <table class="spec">
-      <tr><th>Software</th><td>Ableton Live 12 Suite (includes Max for Live)</td></tr>
-      <tr><th>OS</th><td>Optimized for macOS. Works on Windows too, though fonts may render slightly differently.</td></tr>
+      <tr><th>Software</th><td>Ableton Live 12 Suite (Max for Live included)</td></tr>
+      <tr><th>OS</th><td>Built on macOS. Runs on Windows — fonts may render slightly differently.</td></tr>
       <tr><th>View</th><td>Session View only (Arrangement View not supported)</td></tr>
       <tr><th>Track type</th><td>Regular audio track (not Master / Return)</td></tr>
       <tr><th>Version</th><td>v1.1</td></tr>
@@ -156,31 +149,32 @@
 
     <div class="note">
       <strong>A note on tempo</strong>
-      Elapsed time is calculated from the song tempo. At a fixed tempo the display matches real time.
-      Tempo changes mid-song can introduce a slight drift, so use a fixed tempo when accuracy matters.
+      CountUpTimer derives elapsed time from the project tempo. At a fixed tempo the readout
+      matches the clock exactly. Tempo changes mid-song can introduce slight drift, so stick
+      to a fixed tempo when accuracy matters.
     </div>
 
     <h2>Changelog</h2>
     <table class="spec">
       <tr><th>v1.1<br><span style="font-weight:400;">2026-07-03</span></th>
-          <td>Public release. Fixes a bug found during development where the display could freeze.</td></tr>
+          <td>First public release. Fixes a display freeze found during development.</td></tr>
       <tr><th>v1.0</th>
-          <td>Internal build (never distributed) — affected by the bug above.</td></tr>
+          <td>Internal build, never released.</td></tr>
     </table>
 
     <!-- Download band -->
     <div class="download-band">
       <div>
-        <h3>Download CountUpTimer</h3>
+        <h3>Get CountUpTimer</h3>
         <p>zip (.amxd + readme) · v1.1 · Free</p>
       </div>
       <a class="btn btn-primary" href="https://github.com/WHY3K/why3k-plugins/releases/download/v1.1/CountUpTimer_v1.1.zip">
-        Download <small>zip</small>
+        Download free <small>zip</small>
       </a>
     </div>
 
     <p style="font-size:13.5px; color:var(--ink-soft);">
-      ※ Please don't redistribute or resell. Made by WHY3K.
+      Free to use. Redistribution and resale are not allowed. Made by WHY3K.
     </p>
 
   </div>
