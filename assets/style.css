@@ -341,7 +341,7 @@ section { padding: 72px 0; }
 }
 
 /* パンくず */
-.crumb { font-size: 13px; color: var(--ink-soft); padding: 22px 0 0; }
+.crumb { font-size: 13px; color: var(--ink-soft); padding: 22px 24px 0; }
 .crumb a { text-decoration: none; }
 .crumb a:hover { text-decoration: underline; }
 
