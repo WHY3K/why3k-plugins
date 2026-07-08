@@ -478,3 +478,9 @@ section { padding: 72px 0; }
   .site-header .nav a { font-size: 11px; padding: 3px 7px; }
   .site-header .nav .lang-switch { font-size: 10px; padding: 2px 7px; } /* ENを1行に収める */
 }
+
+
+/* ---------- 日本語の改行最適化 ---------- */
+p, li { text-wrap: pretty; word-break: auto-phrase; }
+h1, h2, h3 { text-wrap: balance; word-break: auto-phrase; }
+.nb { display: inline-block; } /* この単位でしか改行しない */
