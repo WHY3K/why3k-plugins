@@ -67,15 +67,21 @@
   var b = document.getElementById('histBack');
   var f = document.getElementById('histFwd');
   if (!b || !f) return;
+  function canBack() {
+    if (window.navigation && 'canGoBack' in window.navigation) return window.navigation.canGoBack;
+    return history.length > 1;
+  }
   function update() {
+    /* ←は常に有効：履歴がなければメインサイトへ戻る */
+    b.disabled = false;
     if (window.navigation && 'canGoBack' in window.navigation) {
-      b.disabled = !window.navigation.canGoBack;
       f.disabled = !window.navigation.canGoForward;
-    } else {
-      b.disabled = history.length <= 1;
     }
   }
-  b.addEventListener('click', function () { history.back(); });
+  b.addEventListener('click', function () {
+    if (canBack()) { history.back(); }
+    else { window.location.href = 'https://why3k.github.io/'; }
+  });
   f.addEventListener('click', function () { history.forward(); });
   update();
   window.addEventListener('pageshow', function (e) {

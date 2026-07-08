@@ -455,3 +455,13 @@ section { padding: 72px 0; }
 @media (max-width: 1260px) {
   .site-header .nav { padding-right: 84px; }
 }
+
+
+/* ---------- スマホヘッダーの圧縮（2段・詰め） ---------- */
+@media (max-width: 640px) {
+  .site-header .wrap { padding-top: 7px; padding-bottom: 7px; row-gap: 0; min-height: 0; }
+  .site-header .logo { font-size: 13px; letter-spacing: .22em; }
+  .site-header .nav { padding-right: 0; gap: 0 2px; }
+  .site-header .nav a { font-size: 12px; padding: 3px 8px; margin-left: 0; }
+  .site-header .nav .lang-switch { padding: 2px 8px; font-size: 11px; }
+}
