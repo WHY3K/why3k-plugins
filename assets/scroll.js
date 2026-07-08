@@ -114,7 +114,7 @@
     };
     if (reduceMotion()) { go(); return; }
     pt.classList.add('in');
-    setTimeout(function () { window.scrollTo(0, 0); go(); }, 250);
+    setTimeout(function () { window.scrollTo(0, 0); go(); }, 400);
   });
   f.addEventListener('click', function () { history.forward(); });
   update();
