@@ -62,7 +62,9 @@
    ========================================================= */
 (function () {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  function toTop() {
+  function toTop(e) {
+    /* キャッシュ復元(bfcache)はヘッダー描画が壊れるので作り直す */
+    if (e && e.persisted) { location.reload(); return; }
     if (location.hash) return;
     window.scrollTo(0, 0);
     requestAnimationFrame(function () { window.scrollTo(0, 0); });
