@@ -465,3 +465,11 @@ section { padding: 72px 0; }
   .site-header .nav a { font-size: 12px; padding: 3px 8px; margin-left: 0; }
   .site-header .nav .lang-switch { padding: 2px 8px; font-size: 11px; }
 }
+
+
+/* ---------- スマホ：矢印とナビの衝突回避＋タップ領域拡大 ---------- */
+@media (max-width: 640px) {
+  .hist { top: 4px; right: 34px; }
+  .hist .hb { padding: 9px 11px; } /* 指で押しやすく */
+  .site-header .logo { padding: 3px 0 8px; } /* 1段目を少し高くして矢印を収める */
+}

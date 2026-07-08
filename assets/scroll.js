@@ -62,7 +62,13 @@
    ========================================================= */
 (function () {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.addEventListener('pageshow', function () { if (!location.hash) window.scrollTo(0, 0); });
+  function toTop() {
+    if (location.hash) return;
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () { window.scrollTo(0, 0); });
+    setTimeout(function () { window.scrollTo(0, 0); }, 80); /* iOSの非同期復元に勝つ */
+  }
+  window.addEventListener('pageshow', toTop);
 
   var b = document.getElementById('histBack');
   var f = document.getElementById('histFwd');
