@@ -61,6 +61,8 @@
    戻る/進むボタン＋ページ表示は毎回一番上から
    ========================================================= */
 (function () {
+  /* 凍結保存(bfcache)を無効化：戻る時は常に作りたてを読み込む */
+  window.addEventListener('unload', function () {});
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   function toTop(e) {
     /* キャッシュ復元(bfcache)はヘッダー描画が壊れるので作り直す */
