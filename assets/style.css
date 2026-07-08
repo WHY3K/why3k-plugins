@@ -484,3 +484,10 @@ section { padding: 72px 0; }
 p, li { text-wrap: pretty; word-break: auto-phrase; }
 h1, h2, h3 { text-wrap: balance; word-break: auto-phrase; }
 .nb { display: inline-block; } /* この単位でしか改行しない */
+
+
+/* ---------- 横スライド禁止 ---------- */
+html, body { overflow-x: hidden; overflow-x: clip; overscroll-behavior-x: none; }
+.device { max-width: 100%; min-width: 0; }
+.hero-grid > * { min-width: 0; }
+.device .readout { font-size: clamp(26px, 6.4vw, 52px); } /* 小画面でも枠内に収まる下限 */
