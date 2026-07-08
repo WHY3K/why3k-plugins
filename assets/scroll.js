@@ -110,7 +110,7 @@
   b.addEventListener('click', function () {
     var go = function () {
       if (canBack()) { history.back(); }
-      else { window.location.href = 'https://why3k.github.io/'; }
+      else { window.location.href = 'https://why3k.github.io/?t=20260709w'; }
     };
     if (reduceMotion()) { go(); return; }
     pt.classList.add('in');
