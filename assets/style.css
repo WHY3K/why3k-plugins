@@ -432,3 +432,26 @@ section { padding: 72px 0; }
   .nav a { margin-left: 0; font-size: 13px; }
   .hero-cta .btn { padding: 12px 18px; font-size: 14px; }
 }
+
+
+/* ---------- 戻る/進むボタン（メインサイトと同じ位置・見た目） ---------- */
+.hist { position: fixed; top: 15px; right: 42px; z-index: 60; display: flex; gap: 8px; }
+.hist .hb {
+  display: flex; align-items: center; justify-content: center;
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 15px; line-height: 1;
+  color: var(--ink); background: none; border: none;
+  cursor: pointer; padding: 6px 7px;
+  touch-action: manipulation;
+  transition: transform .15s, color .15s, opacity .15s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hist .hb:hover:not(:disabled) { transform: translateX(-2px); }
+  .hist .hb#histFwd:hover:not(:disabled) { transform: translateX(2px); }
+}
+.hist .hb:active { opacity: .4; }
+.hist .hb:disabled { color: #d8d8de; cursor: default; pointer-events: none; }
+/* ヘッダーのナビが←→の下に潜らないように（wrapの端が画面端に近い幅だけ） */
+@media (max-width: 1260px) {
+  .site-header .nav { padding-right: 84px; }
+}

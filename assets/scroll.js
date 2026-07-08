@@ -55,3 +55,37 @@
     requestAnimationFrame(tick);
   }
 })();
+
+
+/* =========================================================
+   戻る/進むボタン＋ページ表示は毎回一番上から
+   ========================================================= */
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('pageshow', function () { if (!location.hash) window.scrollTo(0, 0); });
+
+  var b = document.getElementById('histBack');
+  var f = document.getElementById('histFwd');
+  if (!b || !f) return;
+  function update() {
+    if (window.navigation && 'canGoBack' in window.navigation) {
+      b.disabled = !window.navigation.canGoBack;
+      f.disabled = !window.navigation.canGoForward;
+    } else {
+      b.disabled = history.length <= 1;
+    }
+  }
+  b.addEventListener('click', function () { history.back(); });
+  f.addEventListener('click', function () { history.forward(); });
+  update();
+  window.addEventListener('pageshow', function (e) {
+    update();
+    if (!(window.navigation && 'canGoBack' in window.navigation)) {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (e.persisted || (nav && nav.type === 'back_forward')) f.disabled = false;
+    }
+  });
+  if (window.navigation && window.navigation.addEventListener) {
+    window.navigation.addEventListener('currententrychange', update);
+  }
+})();
