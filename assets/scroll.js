@@ -89,9 +89,32 @@
       f.disabled = !window.navigation.canGoForward;
     }
   }
+  /* 全画面遷移オーバーレイ */
+  var pt = document.createElement('div');
+  pt.className = 'pt';
+  pt.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(pt);
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'back_forward' && !reduceMotion()) {
+      pt.classList.add('cover'); /* 戻り直後は黒から */
+      setTimeout(function () {
+        pt.classList.add('out');
+        setTimeout(function () { pt.classList.remove('out'); pt.classList.remove('cover'); }, 400);
+      }, 160);
+    }
+  })();
+  function reduceMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
   b.addEventListener('click', function () {
-    if (canBack()) { history.back(); }
-    else { window.location.href = 'https://why3k.github.io/'; }
+    var go = function () {
+      if (canBack()) { history.back(); }
+      else { window.location.href = 'https://why3k.github.io/'; }
+    };
+    if (reduceMotion()) { go(); return; }
+    pt.classList.add('in');
+    setTimeout(function () { window.scrollTo(0, 0); go(); }, 250);
   });
   f.addEventListener('click', function () { history.forward(); });
   update();
