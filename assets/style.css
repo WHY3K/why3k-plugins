@@ -469,7 +469,12 @@ section { padding: 72px 0; }
 
 /* ---------- スマホ：矢印とナビの衝突回避＋タップ領域拡大 ---------- */
 @media (max-width: 640px) {
-  .hist { top: 4px; right: 34px; }
+  /* 矢印はヘッダー1段目の右端に「部品として」並べる（重なり原理的にゼロ） */
+  .site-header .hist { position: static; order: 2; margin-left: auto; }
+  .site-header .logo { order: 1; }
+  .site-header .nav { order: 3; width: 100%; padding-right: 0; }
   .hist .hb { padding: 9px 11px; } /* 指で押しやすく */
-  .site-header .logo { padding: 3px 0 8px; } /* 1段目を少し高くして矢印を収める */
+  .site-header .wrap { row-gap: 0; }
+  .site-header .nav a { font-size: 11px; padding: 3px 7px; }
+  .site-header .nav .lang-switch { font-size: 10px; padding: 2px 7px; } /* ENを1行に収める */
 }

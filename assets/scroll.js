@@ -67,6 +67,7 @@
     window.scrollTo(0, 0);
     requestAnimationFrame(function () { window.scrollTo(0, 0); });
     setTimeout(function () { window.scrollTo(0, 0); }, 80); /* iOSの非同期復元に勝つ */
+    setTimeout(function () { window.scrollTo(0, 1); window.scrollTo(0, 0); }, 160); /* 固定ヘッダーの半切れ対策 */
   }
   window.addEventListener('pageshow', toTop);
 
