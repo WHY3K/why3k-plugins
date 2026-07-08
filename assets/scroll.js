@@ -91,7 +91,7 @@
   }
   /* 全画面遷移オーバーレイ */
   var pt = document.createElement('div');
-  pt.className = 'pt';
+  pt.className = 'warp';
   pt.setAttribute('aria-hidden', 'true');
   document.body.appendChild(pt);
   (function () {

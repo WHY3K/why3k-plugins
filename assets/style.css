@@ -493,36 +493,13 @@ html, body { overflow-x: hidden; overflow-x: clip; overscroll-behavior-x: none; 
 .device .readout { font-size: clamp(26px, 6.4vw, 52px); } /* 小画面でも枠内に収まる下限 */
 
 
-/* ---------- 全画面ページ遷移「日蝕ワープ」 ---------- */
-.pt {
+/* ---------- ページ遷移：ホワイトアウト ---------- */
+.warp {
   position: fixed; inset: 0; z-index: 999;
-  background:
-    radial-gradient(1.5px 1.5px at 18% 22%, rgba(255,255,255,.9), transparent 60%),
-    radial-gradient(1px 1px at 72% 15%, rgba(255,255,255,.7), transparent 60%),
-    radial-gradient(1.2px 1.2px at 85% 65%, rgba(255,255,255,.8), transparent 60%),
-    radial-gradient(1px 1px at 30% 78%, rgba(255,255,255,.6), transparent 60%),
-    radial-gradient(1.4px 1.4px at 55% 40%, rgba(255,255,255,.85), transparent 60%),
-    radial-gradient(1px 1px at 8% 55%, rgba(255,255,255,.5), transparent 60%),
-    radial-gradient(1.2px 1.2px at 45% 90%, rgba(255,255,255,.7), transparent 60%),
-    radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,.6), transparent 60%),
-    #0b0b0d;
-  clip-path: circle(0% at 50% 50%);
-  visibility: hidden;
+  background: #fbfbfa;
+  opacity: 0; visibility: hidden;
   pointer-events: none;
 }
-.pt::before {
-  content: ""; position: absolute; left: 50%; top: 50%;
-  width: 34vmin; height: 34vmin; margin: -17vmin 0 0 -17vmin;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.35);
-  box-shadow: inset 0 0 24px rgba(170,201,227,.25);
-  transform: scale(.2); opacity: 0;
-}
-.pt.in { visibility: visible; animation: ptIn .38s cubic-bezier(.76,0,.24,1) forwards; }
-.pt.in::before { animation: ringIn .5s ease-out forwards; }
-.pt.cover { visibility: visible; clip-path: circle(142% at 50% 50%); }
-.pt.out { visibility: visible; animation: ptOut .46s cubic-bezier(.65,0,.35,1) forwards; }
-.pt.out::before { animation: ringIn .5s ease-out forwards; }
-@keyframes ptIn  { from { clip-path: circle(0% at 50% 50%); }   to { clip-path: circle(142% at 50% 50%); } }
-@keyframes ptOut { from { clip-path: circle(142% at 50% 50%); } to { clip-path: circle(0% at 50% 50%); } }
-@keyframes ringIn { 0% { transform: scale(.2); opacity: 0; } 40% { opacity: .9; } 100% { transform: scale(2.6); opacity: 0; } }
+.warp.in { visibility: visible; opacity: 1; transition: opacity .28s ease; }
+.warp.cover { visibility: visible; opacity: 1; }
+.warp.out { visibility: visible; opacity: 0 !important; transition: opacity .32s ease; }
