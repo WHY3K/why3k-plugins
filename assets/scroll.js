@@ -101,7 +101,7 @@
       setTimeout(function () {
         pt.classList.add('out');
         setTimeout(function () { pt.classList.remove('out'); pt.classList.remove('cover'); }, 400);
-      }, 160);
+      }, 60);
     }
   })();
   function reduceMotion() {

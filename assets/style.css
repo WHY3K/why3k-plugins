@@ -502,4 +502,4 @@ html, body { overflow-x: hidden; overflow-x: clip; overscroll-behavior-x: none; 
 }
 .warp.in { visibility: visible; opacity: 1; transition: opacity .28s ease; }
 .warp.cover { visibility: visible; opacity: 1; }
-.warp.out { visibility: visible; opacity: 0 !important; transition: opacity .32s ease; }
+.warp.out { visibility: visible; opacity: 0 !important; transition: opacity .24s ease; }
